@@ -3,86 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India's Socio-Political Landscape and Its Impact on Youth and Migration</title>
+    <title>Navigating AI in Social Work: Balancing Ethics, Values, and Innovation</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.8;
-            margin: 0 auto;
-            max-width: 900px;
-            padding: 30px;
-            color: #2e2e2e;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
             background-color: #f9f9f9;
-        }
-        h1, h2, h3 {
-            color: #1a3c5e;
+            color: #333;
         }
         h1 {
             font-size: 2.5em;
-            border-bottom: 3px solid #1a3c5e;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
         }
         h2 {
             font-size: 1.8em;
-            margin-top: 40px;
-            border-bottom: 2px solid #d3d3d3;
-            padding-bottom: 10px;
+            color: #34495e;
+            margin-top: 30px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
         }
         h3 {
             font-size: 1.4em;
-            margin-top: 30px;
-            color: #355e8a;
+            color: #7f8c8d;
+            margin-top: 20px;
         }
         p {
-            margin: 20px 0;
-            font-size: 1.1em;
+            margin: 15px 0;
+            text-align: justify;
         }
         ul {
-            margin: 20px 0;
-            padding-left: 25px;
+            margin: 15px 0;
+            padding-left: 30px;
         }
         li {
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .intro {
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 20px 0;
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         th, td {
-            border: 1px solid #d3d3d3;
-            padding: 12px;
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: left;
-            font-size: 1em;
         }
         th {
-            background-color: #e6eef6;
-            font-weight: bold;
-            color: #1a3c5e;
+            background-color: #3498db;
+            color: white;
         }
-        caption {
-            padding: 10px;
-            font-style: italic;
-            color: #555;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .references {
+            font-size: 0.9em;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
         }
         a {
-            color: #007bff;
+            color: #3498db;
             text-decoration: none;
-            transition: color 0.3s;
         }
         a:hover {
-            color: #0056b3;
             text-decoration: underline;
-        }
-        .highlight {
-            background-color: #e6eef6;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
         }
     </style>
 </head>
