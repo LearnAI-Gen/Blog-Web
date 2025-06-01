@@ -6,33 +6,46 @@
   <title>MyBlog</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script> 
+  <style>
+    /* Smooth transitions for hover effects */
+    .transition-transform-hover:hover {
+      transform: translateY(-4px);
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
   <!-- Header / Navigation -->
-  <header class="border-b border-gray-200 py-4">
+  <header class="border-b border-gray-200 py-4 bg-white sticky top-0 z-10 shadow-sm">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">MyBlog</h1>
-      <button class="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-sm">
+      <h1 class="text-xl font-bold text-green-600">MyBlog</h1>
+      <button class="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-md">
         Subscribe
       </button>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-black text-white text-center py-12">
+  <section class="bg-gradient-to-r from-black via-gray-900 to-black text-white text-center py-16">
     <h1 class="text-4xl md:text-5xl font-bold mb-3">WELCOME</h1>
-    <p class="text-lg text-gray-300">“Wisdom begins in Wonder” — Socrates</p>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+      “Wisdom begins in Wonder” — Socrates
+    </p>
   </section>
 
   <!-- Search Bar -->
   <section class="container mx-auto px-4 mt-6 max-w-3xl">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search blog posts..."
-      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-    />
+    <div class="relative">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search blog posts..."
+        class="w-full p-4 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 shadow-sm"
+      />
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
   </section>
 
   <!-- Main Content -->
@@ -42,13 +55,13 @@
       <div class="md:col-span-2 space-y-6">
         
         <!-- Post 1 -->
-        <article id="post1" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <article id="post1" class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 transform transition-transform-hover">
           <img src="https://via.placeholder.com/750x300"  alt="Blog Image 1" class="w-full h-48 object-cover" />
-          <div class="p-5">
-            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600 transition-colors">
               <a href="posts/post1.html">My First Blog Post</a>
             </h2>
-            <p class="text-gray-600 mb-4">This is a preview of my first blog post.</p>
+            <p class="text-gray-600 mb-4 line-clamp-3">This is a preview of my first blog post.</p>
             <a href="posts/post1.html" class="inline-block text-green-600 font-medium hover:underline">
               Read More →
             </a>
@@ -56,13 +69,13 @@
         </article>
 
         <!-- Post 2 -->
-        <article id="post2" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <article id="post2" class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 transform transition-transform-hover">
           <img src="https://via.placeholder.com/750x300"  alt="Blog Image 2" class="w-full h-48 object-cover" />
-          <div class="p-5">
-            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600 transition-colors">
               <a href="posts/post2.html">Another Interesting Post</a>
             </h2>
-            <p class="text-gray-600 mb-4">Here's a quick look at another article I wrote.</p>
+            <p class="text-gray-600 mb-4 line-clamp-3">Here's a quick look at another article I wrote.</p>
             <a href="posts/post2.html" class="inline-block text-green-600 font-medium hover:underline">
               Read More →
             </a>
@@ -70,13 +83,13 @@
         </article>
 
         <!-- Post 3 -->
-        <article id="post3" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <article id="post3" class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 transform transition-transform-hover">
           <img src="https://via.placeholder.com/750x300"  alt="Blog Image 3" class="w-full h-48 object-cover" />
-          <div class="p-5">
-            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600 transition-colors">
               <a href="posts/ai-social-work.html">Steering AI in Social Work</a>
             </h2>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-600 mb-4 line-clamp-3">
               A deep dive into the ethical and practical impacts of AI in the field of social work.
             </p>
             <a href="posts/ai-social-work.html" class="inline-block text-green-600 font-medium hover:underline">
@@ -86,10 +99,10 @@
         </article>
 
         <!-- Post 4 -->
-        <article id="post4" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <article id="post4" class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 transform transition-transform-hover">
           <img src="https://via.placeholder.com/750x300"  alt="Blog Image 4" class="w-full h-48 object-cover" />
-          <div class="p-5">
-            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+          <div class="p-6">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600 transition-colors">
               <a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html">
                 India's Socio-Political Landscape and Its Impact on Youth and Migration
               </a>
@@ -104,18 +117,18 @@
 
       <!-- Sidebar -->
       <div class="space-y-8">
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Recent Posts</h4>
-          <ul class="space-y-2">
-            <li><a href="posts/post1.html" class="text-blue-600 hover:text-green-600 hover:underline">My First Blog Post</a></li>
-            <li><a href="posts/post2.html" class="text-blue-600 hover:text-green-600 hover:underline">Another Interesting Post</a></li>
-            <li><a href="posts/ai-social-work.html" class="text-blue-600 hover:text-green-600 hover:underline">Steering AI in Social Work</a></li>
-            <li><a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html" class="text-blue-600 hover:text-green-600 hover:underline">India's Socio-Political Landscape...</a></li>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="text-lg font-semibold mb-4 text-gray-800">Recent Posts</h4>
+          <ul class="space-y-3">
+            <li><a href="posts/post1.html" class="block text-blue-600 hover:text-green-600 hover:underline">My First Blog Post</a></li>
+            <li><a href="posts/post2.html" class="block text-blue-600 hover:text-green-600 hover:underline">Another Interesting Post</a></li>
+            <li><a href="posts/ai-social-work.html" class="block text-blue-600 hover:text-green-600 hover:underline">Steering AI in Social Work</a></li>
+            <li><a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html" class="block text-blue-600 hover:text-green-600 hover:underline">India's Socio-Political Landscape...</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="text-lg font-semibold mb-4">Categories</h4>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h4 class="text-lg font-semibold mb-4 text-gray-800">Categories</h4>
           <ul class="space-y-2">
             <li class="text-gray-700">Technology</li>
             <li class="text-gray-700">Social Impact</li>
@@ -127,7 +140,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+  <footer class="bg-white py-8 border-t border-gray-200 text-center text-sm text-gray-500">
     <p>&copy; 2025 MyBlog. All rights reserved.</p>
   </footer>
 
