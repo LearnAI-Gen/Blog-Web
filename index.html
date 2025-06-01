@@ -1,147 +1,149 @@
-import React, { useState } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyBlog</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+</head>
+<body class="bg-white text-gray-800">
 
-export default function App() {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: "My First Blog Post",
-      preview: "This is a preview of my first blog post.",
-      image: "https://via.placeholder.com/750x300", 
-      link: "posts/post1.html",
-    },
-    {
-      id: 2,
-      title: "Another Interesting Post",
-      preview: "Here's a quick look at another article I wrote.",
-      image: "https://via.placeholder.com/750x300", 
-      link: "posts/post2.html",
-    },
-    {
-      id: 3,
-      title: "Steering AI in Social Work",
-      preview:
-        "A deep dive into the ethical and practical impacts of AI in the field of social work.",
-      image: "https://via.placeholder.com/750x300", 
-      link: "posts/ai-social-work.html",
-    },
-    {
-      id: 4,
-      title:
-        "India's Socio-Political Landscape and Its Impact on Youth and Migration",
-      preview: "",
-      image: "https://via.placeholder.com/750x300", 
-      link: "posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html",
-    },
-  ];
-
-  const filteredPosts = blogPosts.filter((post) =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  return (
-    <div className="min-h-screen bg-white text-gray-800">
-      {/* Header */}
-      <header className="border-b border-gray-200 py-4">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">MyBlog</h1>
-          <button className="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-sm">
-            Subscribe
-          </button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="bg-black text-white text-center py-10">
-        <h1 className="text-4xl md:text-5xl font-bold mb-3">WELCOME</h1>
-        <p className="text-lg text-gray-300">“Wisdom begins in Wonder” — Socrates</p>
-      </section>
-
-      {/* Search Bar */}
-      <section className="container mx-auto px-4 mt-6">
-        <input
-          type="text"
-          placeholder="Search blog posts..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full max-w-xl p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-        />
-      </section>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Blog Posts */}
-          <div className="md:col-span-2 space-y-6">
-            {filteredPosts.length > 0 ? (
-              filteredPosts.map((post) => (
-                <article
-                  key={post.id}
-                  className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-5">
-                    <h2 className="text-2xl font-semibold mb-2 hover:text-green-600">
-                      <a href={post.link}>{post.title}</a>
-                    </h2>
-                    {post.preview && (
-                      <p className="text-gray-600 mb-4">{post.preview}</p>
-                    )}
-                    <a
-                      href={post.link}
-                      className="inline-block text-green-600 font-medium hover:underline"
-                    >
-                      Read More →
-                    </a>
-                  </div>
-                </article>
-              ))
-            ) : (
-              <p className="text-gray-500 text-center py-10">
-                No posts found matching "{searchQuery}".
-              </p>
-            )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Recent Posts</h4>
-              <ul className="space-y-2">
-                {blogPosts.slice(0, 4).map((post) => (
-                  <li key={post.id}>
-                    <a
-                      href={post.link}
-                      className="text-blue-600 hover:text-green-600 hover:underline"
-                    >
-                      {post.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Categories</h4>
-              <ul className="space-y-2">
-                <li className="text-gray-700">Technology</li>
-                <li className="text-gray-700">Social Impact</li>
-                <li className="text-gray-700">AI</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 py-6 text-center text-sm text-gray-500">
-        <p>&copy; 2025 MyBlog. All rights reserved.</p>
-      </footer>
+  <!-- Header / Navigation -->
+  <header class="border-b border-gray-200 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">MyBlog</h1>
+      <button class="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors shadow-sm">
+        Subscribe
+      </button>
     </div>
-  );
-}
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-black text-white text-center py-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">WELCOME</h1>
+    <p class="text-lg text-gray-300">“Wisdom begins in Wonder” — Socrates</p>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="container mx-auto px-4 mt-6 max-w-3xl">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search blog posts..."
+      class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10 max-w-6xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Blog Posts -->
+      <div class="md:col-span-2 space-y-6">
+        
+        <!-- Post 1 -->
+        <article id="post1" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+          <img src="https://via.placeholder.com/750x300"  alt="Blog Image 1" class="w-full h-48 object-cover" />
+          <div class="p-5">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+              <a href="posts/post1.html">My First Blog Post</a>
+            </h2>
+            <p class="text-gray-600 mb-4">This is a preview of my first blog post.</p>
+            <a href="posts/post1.html" class="inline-block text-green-600 font-medium hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article id="post2" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+          <img src="https://via.placeholder.com/750x300"  alt="Blog Image 2" class="w-full h-48 object-cover" />
+          <div class="p-5">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+              <a href="posts/post2.html">Another Interesting Post</a>
+            </h2>
+            <p class="text-gray-600 mb-4">Here's a quick look at another article I wrote.</p>
+            <a href="posts/post2.html" class="inline-block text-green-600 font-medium hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article id="post3" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+          <img src="https://via.placeholder.com/750x300"  alt="Blog Image 3" class="w-full h-48 object-cover" />
+          <div class="p-5">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+              <a href="posts/ai-social-work.html">Steering AI in Social Work</a>
+            </h2>
+            <p class="text-gray-600 mb-4">
+              A deep dive into the ethical and practical impacts of AI in the field of social work.
+            </p>
+            <a href="posts/ai-social-work.html" class="inline-block text-green-600 font-medium hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article id="post4" class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+          <img src="https://via.placeholder.com/750x300"  alt="Blog Image 4" class="w-full h-48 object-cover" />
+          <div class="p-5">
+            <h2 class="text-2xl font-semibold mb-2 hover:text-green-600">
+              <a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html">
+                India's Socio-Political Landscape and Its Impact on Youth and Migration
+              </a>
+            </h2>
+            <a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html" class="inline-block text-green-600 font-medium hover:underline">
+              Read More →
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Recent Posts</h4>
+          <ul class="space-y-2">
+            <li><a href="posts/post1.html" class="text-blue-600 hover:text-green-600 hover:underline">My First Blog Post</a></li>
+            <li><a href="posts/post2.html" class="text-blue-600 hover:text-green-600 hover:underline">Another Interesting Post</a></li>
+            <li><a href="posts/ai-social-work.html" class="text-blue-600 hover:text-green-600 hover:underline">Steering AI in Social Work</a></li>
+            <li><a href="posts/India's Socio-Political Landscape and Its Impact on Youth and Migration.html" class="text-blue-600 hover:text-green-600 hover:underline">India's Socio-Political Landscape...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Categories</h4>
+          <ul class="space-y-2">
+            <li class="text-gray-700">Technology</li>
+            <li class="text-gray-700">Social Impact</li>
+            <li class="text-gray-700">AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+    <p>&copy; 2025 MyBlog. All rights reserved.</p>
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+      const query = this.value.toLowerCase();
+      const posts = document.querySelectorAll("[id^='post']");
+      posts.forEach(post => {
+        const titleElement = post.querySelector("h2 a");
+        if (!titleElement) return;
+        const title = titleElement.innerText.toLowerCase();
+        post.style.display = title.includes(query) ? "" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
